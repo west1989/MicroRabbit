@@ -122,7 +122,7 @@ namespace MicroRabbit.Infrastructure.Bus
           var eventType = _eventTypes.SingleOrDefault(t => t.Name == eventName);
           var @event = JsonConvert.DeserializeObject(message, eventType);
           var concreteType = typeof(IEventHandler<>).MakeGenericType(eventType);
-          await (Task) concreteType.GetMethod("Handle").Invoke(handler, new object[] {@event});
+          await (Task)concreteType.GetMethod("Handle").Invoke(handler, new object[] {@event});
         }
       }
     }
