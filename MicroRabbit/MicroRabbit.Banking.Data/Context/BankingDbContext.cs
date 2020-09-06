@@ -16,7 +16,7 @@ namespace MicroRabbit.Banking.Data.Context
     public DbSet<Account> Accounts { get; set; }
   }
 
-  public class EmployeeFactory : IDesignTimeDbContextFactory<BankingDbContext>
+  public class BankingFactory : IDesignTimeDbContextFactory<BankingDbContext>
   {
     public BankingDbContext CreateDbContext(string[] args)
     {
